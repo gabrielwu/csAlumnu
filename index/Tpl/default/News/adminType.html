@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{$css}/main.css" rel="stylesheet" type="text/css" />
+<link href="{$css}/index.css" rel="stylesheet" type="text/css" />    
+<link href="{$css}/right.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="{$js}/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" language="javascript" src="{$js}/news.js"></script>
+<script type="text/javascript">
+$(function() {
+});
+</script>
+</head>
+<body>
+<div id="right">
+    <div class="title">
+    	<span>新闻通知</span> — <span>分类管理</span>
+    </div>
+	<div class="">
+        <table class="tb1 tb2" id="tb_r" >
+            <thead>
+			    <tr class="">
+					<th width="">分类名称</th>
+					<th  width="" class="operate">操作</th>
+				</tr>
+			</thead>
+            <tbody>
+				<tr>
+					<td align="center"><input class="" type="text" id="name" name="name" value="" /></td>
+					<td align="center" class="operate">
+						<a href="javascript:addNewsType('{$url}/addType')" class="" >添加</a>
+					</td>
+				</tr>
+				<volist name="type_list" id="data">
+					<tr>
+						<td align="center" class="">
+						    <input id="type_name_{$data.id}" type="text" value="{$data.name}" />
+						</td>  
+						<td align="center" class="operate">
+							<a href="javascript:editNewsType({$data.id}, '{$url}/editType')" class="" >编辑</a>
+							<a href="javascript:deleteNewsType({$data.id}, '{$url}/deleteType')" class="" >删除</a>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+        </table>
+	</div>
+</div>
+</body>
+</html>

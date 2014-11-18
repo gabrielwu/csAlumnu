@@ -1,0 +1,25 @@
+[ 2013-10-18T16:43:11+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T16:43:38+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T16:44:31+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T16:49:19+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T16:49:55+08:00 ] ERR: (ThinkException) 由于目标计算机积极拒绝，无法连接。
+
+[ 2013-10-18T16:50:01+08:00 ] ERR: (ThinkException) 由于目标计算机积极拒绝，无法连接。
+
+[ 2013-10-18T16:50:14+08:00 ] ERR: (ThinkException) 由于目标计算机积极拒绝，无法连接。
+
+[ 2013-10-18T17:06:47+08:00 ] ERR: (ThinkException) 妯℃澘涓嶅瓨鍦╗./index/Tpl/default/Index/left_.html]
+[ 2013-10-18T17:06:47+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T17:07:02+08:00 ] ERR: (ThinkException) 妯℃澘涓嶅瓨鍦╗./index/Tpl/default/Index/left_.html]
+[ 2013-10-18T17:07:02+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T17:08:41+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T17:15:14+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T17:15:17+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T17:20:33+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)
+[ 2013-10-18T20:34:54+08:00 ] ERR: (ThinkException) 妯℃澘涓嶅瓨鍦╗./index/Tpl/default/Index/left_.html]
+[ 2013-10-18T23:13:19+08:00 ] ERR: (ThinkException) 闈炴硶鎿嶄綔url
+[ 2013-10-18T23:14:45+08:00 ] ERR: (ThinkException) 闈炴硶鎿嶄綔url
+[ 2013-10-18T23:15:16+08:00 ] ERR: (ThinkException) 闈炴硶鎿嶄綔url
+[ 2013-10-18T23:16:07+08:00 ] ERR: (ThinkException) 闈炴硶鎿嶄綔url
+[ 2013-10-18T23:41:16+08:00 ] ERR: (ThinkException) 闈炴硶鎿嶄綔xwgg.html
+[ 2013-10-18T23:41:18+08:00 ] ERR: (ThinkException) 闈炴硶鎿嶄綔xydt.html

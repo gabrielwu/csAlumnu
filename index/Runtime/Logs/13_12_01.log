@@ -1,0 +1,7 @@
+[ 2013-12-01T15:41:14+08:00 ] ERR: (ThinkException) 非法操作downloadCollectGraduate
+[ 2013-12-01T15:42:12+08:00 ] ERR: (ThinkException) 非法操作downloadCollectGraduate
+[ 2013-12-01T15:42:58+08:00 ] ERR: (ThinkException) 非法操作downloadCollectGraduate
+[ 2013-12-01T15:59:07+08:00 ] ERR: (ThinkException) 非法操作delete
+[ 2013-12-01T15:59:23+08:00 ] ERR: (ThinkException) 非法操作delete
+[ 2013-12-01T21:18:05+08:00 ] ERR: (ThinkException) No such file or directory
+[ 2013-12-01T21:36:43+08:00 ] ERR: (ThinkException) Access denied for user 'root'@'localhost' (using password: YES)

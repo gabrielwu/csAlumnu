@@ -1,0 +1,5 @@
+[ 2013-10-29T22:35:55+08:00 ] ERR: (ThinkException) 模板不存在[./index/Tpl/default/Index/left_.html]
+[ 2013-10-29T22:59:46+08:00 ] ERR: (ThinkException) 模板不存在[./index/Tpl/default/Index/left_.html]
+[ 2013-10-29T23:52:16+08:00 ] ERR: (ThinkException) 非法操作insert
+[ 2013-10-29T23:52:58+08:00 ] ERR: (ThinkException) 非法操作insert
+[ 2013-10-29T23:57:21+08:00 ] ERR: (ThinkException) 非法操作insert

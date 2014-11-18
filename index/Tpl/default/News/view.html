@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{$css}/main.css" rel="stylesheet" type="text/css" />
+<link href="{$css}/index.css" rel="stylesheet" type="text/css" />    
+<link href="{$css}/right.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="{$js}/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" language="javascript" src="{$js}/news.js"></script>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+<div id="right">
+    <div class="title">
+		<a href="javascript:history.go(-1);">返回</a>
+    	<a href="{$url}/index"><span>新闻通知</span></a> — 
+		<span>查看</span>
+    </div>
+	<div class="content3">
+		<h3>{$data.title}</h3>
+		<h4>
+			<span>{$data.time}</span>
+			<span>分类:{$data.type_name}</span>
+			<if condition="$manager_level neq -1">
+			<span><a href="javascript:topNews({$data.id}, 1, '{$url}/top')" class="" >置顶</a></span>
+			<span><a href="javascript:topNews({$data.id}, 0, '{$url}/top')" class="" >取消置顶</a></span>
+			<span><a href="{$url}/editInput?id={$data.id}" class="" >编辑</a></span>
+			<span><a href="javascript:deleteNews({$data.id}, '{$url}/delete')" class="" >删除</a></span>
+			<else/></if>
+		</h4>
+		<p class="new_content">{$data.content}</p>
+	</div>
+</div>
+</body>
+</html>

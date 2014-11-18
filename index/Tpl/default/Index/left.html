@@ -1,0 +1,65 @@
+<link href="{$css}/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="{$js}/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" language="javascript" src="{$js}/left.js"></script>
+<script type="text/javascript" language="javascript">
+function editConfirmView(){
+	window.showModalDialog('{$root}/index.php/Student/editConfirmView', window, 'dialogWidth:900px;dialogHeight:600px');      
+}
+</script>
+<div id="left">
+<if condition="$level eq 1">
+    <div>
+	    <h3>学生信息</h3>
+	    <p class="">
+	        <a href="{$root}/index.php/Student/stuDetail" target="main">个人信息</a>
+			<a href="javascript:editConfirmView()" target="main">修改申请</a>
+		    <a href="{$root}/index.php/Student/queryAll" target="main">全部学生生信息</a>
+		    <a href="{$root}/index.php/Student/queryGraduate" target="main">毕业生信息</a>
+	    </p>
+    </div>
+    <div>
+	    <h3>新闻通知</h3>
+	    <p class="">
+		    <a href="{$root}/index.php/News/index" target="main">全部</a>
+		    <volist name="news_type_list" id="news_type">
+				<a href="{$root}/index.php/News/index?type={$news_type.id}" target="main">{$news_type.name}</a>
+			</volist>
+	    </p>
+    </div>
+    <div>
+	    <h3>帐号管理</h3>
+	    <p class="">
+	        <a href="{$root}/index.php/Account/changePassword" target="main">修改密码</a>
+	    </p>
+    </div>
+<else/>
+    <div>
+	    <h3>学生信息</h3>
+	    <p class="">
+		    <a href="{$root}/index.php/Student/queryAll" target="main">全部学生信息</a>
+		    <a href="{$root}/index.php/Student/queryGraduate" target="main">毕业生信息</a>
+	        <a href="{$root}/index.php/Student/collect" target="main">信息采集</a>
+	        <a href="{$root}/index.php/Student/collectGraduate" target="main">毕业生信息采集</a>
+	        <a href="{$root}/index.php/Student/rollEditInput" target="main">学籍变更</a>
+			<a href="{$root}/index.php/Student/editConfirmList" target="main">信息审核</a>
+	    </p>
+    </div>
+    <div>
+	    <h3>新闻通知</h3>
+	    <p class="">
+			<a href="{$root}/index.php/News/addInput" target="main">发布</a>
+			<a href="{$root}/index.php/News/index" target="main">新闻列表</a>
+			<a href="{$root}/index.php/News/adminType" target="main">分类管理</a>
+	    </p>
+    </div>
+    <div>
+	    <h3>帐号管理</h3>
+	    <p class="">
+	        <a href="{$root}/index.php/Account/changePassword" target="main">修改密码</a>
+			<if condition="$manager_level eq 0">
+			<a href="{$root}/index.php/Admin/index" target="main">管理员列表</a>
+			<else/></if>
+	    </p>
+    </div>
+</if>
+</div>

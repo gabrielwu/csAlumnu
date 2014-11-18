@@ -1,0 +1,23 @@
+<link href="{$css}/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$js}/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="{$js}/Clock.js"></script>
+<script type="text/javascript">
+$(function (){
+	  var clock = new Clock();
+	  clock.display(document.getElementById("clock"));
+});
+</script>
+<div id="top">
+    <div>
+        <a href="{$root}/index.php/Index/logout" target="_parent">退出</a>
+        <span id="clock"></span>
+        <if condition="($level eq 2)"> 
+            <a href="{$root}/index.php/Student/editConfirmList" target="main">信息审核</a>&nbsp;&nbsp;
+        </if>
+        <span>你好，
+            <if condition="($level eq 1)">{$username} 同学
+            <else />管理员 {$username}</if>
+        </span>
+    </div>
+    <p>计算机科学与技术学院院友之家</p>
+</div>

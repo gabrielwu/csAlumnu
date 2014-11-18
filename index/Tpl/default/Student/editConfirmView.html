@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Pragma" content="text/html; charset=utf-8; no-cache"  />
+<base target="_self"> 
+<meta http-equiv="Expires" content="0" />
+<link href="{$css}/main.css" rel="stylesheet" type="text/css" />
+<link href="{$css}/index.css" rel="stylesheet" type="text/css" />    
+<link href="{$css}/right.css" rel="stylesheet" type="text/css" />
+<link href="{$css}/viewEditInfo.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="{$js}/jquery-2.0.3.min.js"></script>
+<title></title>
+<script type="text/javascript" language="javascript" >
+</script>
+<body>
+<if condition="$data_edit.stu_id neq '' ">
+    <form action="#"  id="form" method="post" target="main">
+		<table class="form tb1 tb2">
+		<thead>
+			<tr>
+				<th colspan="3">
+					<if condition="$level eq 2 ">
+					<input type="button" class="btn"  onclick="passConfirm({$data.stu_id});"   value="通过审核"   />
+					<input type="button" class="btn"  onclick="nopassConfirm({$data.stu_id});" value="不通过审核" />
+					<else/>
+					<input type="button" class="btn"  onclick="deleteEdit();" value="放弃修改" />
+					</if>
+				</th>
+			</tr>
+		</thead>
+        <tbody>
+            <tr>
+			    <th><label class="label1">头像</label></th>
+       			<td align=center><img id="img1" src="{$root}/upload/ID_photo/{$data.stu_photo}" width="90" height="110"/></td>
+            	<td align=center><img id="img2" src="{$root}/upload/ID_photo_temp/{$data_edit.stu_photo}" width="90" height="110"/></td>
+			</tr>
+			<tr>
+            	<th><label class="label1">学生姓名</label></th>
+            	<td><label class="label1">{$data.stu_name}</label></td>
+				<if condition="$data.stu_name neq $data_edit.stu_name ">
+            	<td><label class="label2">{$data_edit.stu_name}</label></td>
+				<else/>
+            	<td><label class="label1">{$data_edit.stu_name}</label></td>
+				</if>
+           	</tr>
+            <tr>
+            	<th><label class="label1">学号</label></th>
+            	<td><label class="label1">{$data.stu_num}</label></td>
+				<if condition="$data.stu_num neq $data_edit.stu_num ">
+            	<td><label class="label2">{$data_edit.stu_num}</label></td>
+				<else/>
+            	<td><label class="label1">{$data_edit.stu_num}</label></td>
+				</if>
+            </tr>
+			<if condition="$data.stu_grade neq $data_edit.stu_grade ">
+            <tr>
+            	<th><label class="label1">年级</label></th>
+            	<td><label class="label1">{$data.stu_grade}</label></td>
+            	<td><label class="label2">{$data_edit.stu_grade}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_class neq $data_edit.stu_class ">
+            <tr>
+            	<th><label class="label1">班级</label></th>
+				<td><label class="label1">{$data.stu_class}</label></td>
+            	<td><label class="label2">{$data_edit.stu_class}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.major neq $data_edit.major ">
+            <tr>
+            	<th><label class="label1">专业</label></th>
+				<td><label class="label1">{$data.major}</label></td>
+            	<td><label class="label2">{$data_edit.major}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.degree neq $data_edit.degree ">
+            <tr>
+            	<th><label class="label1">学位类别</label></th>
+				<td><label class="label1">{$data.degree}</label></td>
+            	<td><label class="label2">{$data_edit.degree}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.tutor neq $data_edit.tutor ">
+            <tr>
+            	<th><label class="label1">导师</label></th>
+				<td><label class="label1">{$data.tutor}</label></td>
+            	<td><label class="label2">{$data_edit.tutor}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.research neq $data_edit.research ">
+            <tr>
+            	<th><label class="label1">研究方向</label></th>
+				<td><label class="label1">{$data.research}</label></td>
+            	<td><label class="label2">{$data_edit.research}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.exam_mode neq $data_edit.exam_mode ">
+            <tr>
+            	<th><label class="label1">考试方式</label></th>
+				<td><label class="label1">{$data.exam_mode}</label></td>
+            	<td><label class="label2">{$data_edit.exam_mode}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.edu_time neq $data_edit.edu_time ">
+            <tr>
+            	<th><label class="label1">学制</label></th>
+				<td><label class="label1">{$data.edu_time}</label></td>
+            	<td><label class="label2">{$data_edit.edu_time}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.directed neq $data_edit.directed ">
+            <tr>
+            	<th><label class="label1">定向培养</label></th>
+				<td><label class="label1">{$data.directed}</label></td>
+            	<td><label class="label2">{$data_edit.directed}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.roll neq $data_edit.roll ">
+			<tr>
+            	<th><label class="label1">学籍状态</label></th>
+            	<td><label class="label1">{$data.roll}</label></td>
+            	<td><label class="label2">{$data_edit.roll}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.last_school neq $data_edit.last_school ">
+			<tr>
+            	<th><label class="label1">毕业学校</label></th>
+            	<td><label class="label1">{$data.last_school}</label></td>
+            	<td><label class="label2">{$data_edit.last_school}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.last_major neq $data_edit.last_major ">
+			<tr>
+            	<th><label class="label1">毕业专业</label></th>
+            	<td><label class="label1">{$data.last_major}</label></td>
+            	<td><label class="label2">{$data_edit.last_major}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.last_date neq $data_edit.last_date ">
+			<tr>
+            	<th><label class="label1">最后毕业时间</label></th>
+            	<td><label class="label1">{$data.last_date}</label></td>
+            	<td><label class="label2">{$data_edit.last_date}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_indate neq $data_edit.stu_indate ">
+            <tr>
+            	<th><label class="label1">入学时间</label></th>
+            	<td><label class="label1">{$data.stu_indate}</label></td>
+            	<td><label class="label2">{$data_edit.stu_indate}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.politics neq $data_edit.politics ">
+            <tr>
+            	<th><label class="label1">政治面貌</label></th>
+            	<td><label class="label1">{$data.politics}</label></td>
+                <td><label class="label2">{$data_edit.politics}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_gender neq $data_edit.stu_gender ">
+            <tr>
+            	<th><label class="label1">性别</label></th>
+            	<td><label class="label1">{$data.stu_gender}</label></td>
+            	<td><label class="label2" id=stu_gender>{$data_edit.stu_gender}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_nation neq $data_edit.stu_nation ">
+            <tr>
+            	<th><label class="label1">民族</label></th>
+            	<td><label class="label1">{$data.stu_nation}</label></td>
+            	<td><label class="label2" id=stu_nation>{$data_edit.stu_nation}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.hometown neq $data_edit.hometown ">
+            <tr>
+            	<th><label class="label1">籍贯</label></th>
+            	<td><label class="label1">{$data.hometown}</label></td>
+            	<td><label class="label2" id=stu_hometown>{$data_edit.hometown}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_birthday neq $data_edit.stu_birthday ">
+            <tr>
+            	<th><label class="label1">出生日期</label></th>
+            	<td><label class="label1">{$data.stu_birthday}</label></td>
+            	<td><label class="label2">{$data_edit.stu_birthday}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_idnum neq $data_edit.stu_idnum ">
+            <tr>
+            	<th><label class="label1">身份证号码</label></th>
+            	<td><label class="label1">{$data.stu_idnum}</label></td>
+            	<td><label class="label2" id=stu_idnum>{$data_edit.stu_idnum}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_mobile neq $data_edit.stu_mobile ">
+            <tr>
+            	<th><label class="label1">手机</label></th>
+            	<td><label class="label1">{$data.stu_mobile}</label></td>
+            	<td><label class="label2" id=stu_mobile>{$data_edit.stu_mobile}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_qqnum neq $data_edit.stu_qqnum ">
+            <tr>
+            	<th><label class="label1">QQ</label></th>
+            	<td><label class="label1">{$data.stu_qqnum}</label></td>
+            	<td><label class="label2">{$data_edit.stu_qqnum}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.stu_email neq $data_edit.stu_email ">
+            <tr>
+            	<th><label class="label1">邮箱</label></th>
+            	<td><label class="label1">{$data.stu_email}</label></td>
+            	<td><label class="label2">{$data_edit.stu_email}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.homepage neq $data_edit.homepage ">
+            <tr>
+            	<th><label class="label1">个人主页</label></th>
+            	<td><label class="label1">{$data.homepage}</label></td>
+            	<td><label class="label2">{$data_edit.homepage}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.home_addr neq $data_edit.home_addr ">
+            <tr>
+                <th><label class="label1">家庭地址</label></th>
+            	<td><label class="label1">{$data.home_addr}</label></td>
+            	<td><label class="label2">{$data_edit.home_addr}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.train neq $data_edit.train ">
+            <tr>
+                <th><label class="label1">乘车区间</label></th>
+            	<td><label class="label1">{$data.train}</label></td>
+            	<td><label class="label2">{$data_edit.train}</label></td>
+            </tr>
+			</if>
+			<if condition="$data.dad_name neq $data_edit.dad_name ">
+			<tr>
+			    <th><label class="label1">父亲姓名</label></th>
+           		<td><label class="label1">{$data.dad_name}</label></td>
+          		<td><label class="label2">{$data_edit.dad_name}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.mom_name neq $data_edit.mom_name ">
+			<tr>
+			    <th><label class="label1">母亲姓名</label></th>
+           		<td><label class="label1">{$data.mom_name}</label></td>
+          		<td><label class="label2">{$data_edit.mom_name}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.dad_phone neq $data_edit.dad_phone ">
+			<tr>
+			    <th><label class="label1">父亲电话</label></th>
+           		<td><label class="label1">{$data.dad_phone}</label></td>
+          		<td><label class="label2">{$data_edit.dad_phone}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.mom_phone neq $data_edit.mom_phone ">
+			<tr>
+			    <th><label class="label1">母亲电话</label></th>
+           		<td><label class="label1">{$data.mom_phone}</label></td>
+          		<td><label class="label2">{$data_edit.mom_phone}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.dad_unit neq $data_edit.dad_unit ">
+			<tr>
+			    <th><label class="label1">父亲工作单位</label></th>
+           		<td><label class="label1">{$data.dad_unit}</label></td>
+          		<td><label class="label2">{$data_edit.dad_unit}</label></td>
+			</tr>
+			</if>
+			<if condition="$data.mom_unit neq $data_edit.mom_unit ">
+           	</tr>
+			    <th><label class="label1">母亲工作单位</label></th>
+           		<td><label class="label1">{$data.mom_unit}</label></td>
+          		<td><label class="label2">{$data_edit.mom_unit}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.graduate_date neq $data_edit.graduate_date ">
+           	</tr>
+			    <th><label class="label1">毕业时间</label></th>
+           		<td><label class="label1">{$data.graduate_date}</label></td>
+          		<td><label class="label2">{$data_edit.graduate_date}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.graduate_type neq $data_edit.graduate_type ">
+           	</tr>
+			    <th><label class="label1">毕业去向</label></th>
+           		<td><label class="label1">{$data.graduate_type}</label></td>
+          		<td><label class="label2">{$data_edit.graduate_type}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.post_info neq $data_edit.post_info ">
+           	</tr>
+			    <th><label class="label1">档案邮寄</label></th>
+           		<td><label class="label1">{$data.post_info}</label></td>
+          		<td><label class="label2">{$data_edit.post_info}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.work_unit neq $data_edit.work_unit ">
+           	</tr>
+			    <th><label class="label1">单位</label></th>
+           		<td><label class="label1">{$data.work_unit}</label></td>
+          		<td><label class="label2">{$data_edit.work_unit}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.wu_phone neq $data_edit.wu_phone ">
+           	</tr>
+			    <th><label class="label1">单位电话</label></th>
+           		<td><label class="label1">{$data.wu_phone}</label></td>
+          		<td><label class="label2">{$data_edit.wu_phone}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.wu_email neq $data_edit.wu_email ">
+           	</tr>
+			    <th><label class="label1">单位邮箱</label></th>
+           		<td><label class="label1">{$data.wu_email}</label></td>
+          		<td><label class="label2">{$data_edit.wu_email}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.wu_unit neq $data_edit.wu_unit ">
+           	</tr>
+			    <th><label class="label1">单位地址</label></th>
+           		<td><label class="label1">{$data.wu_unit}</label></td>
+          		<td><label class="label2">{$data_edit.wu_unit}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.present_city neq $data_edit.present_city ">
+           	</tr>
+			    <th><label class="label1">现居城市</label></th>
+           		<td><label class="label1">{$data.present_city}</label></td>
+          		<td><label class="label2">{$data_edit.present_city}</label></td>
+           	</tr>
+			</if>
+			<if condition="$data.present_addr neq $data_edit.present_addr ">
+           	</tr>
+			    <th><label class="label1">现居地址</label></th>
+           		<td><label class="label1">{$data.present_addr}</label></td>
+          		<td><label class="label2">{$data_edit.present_addr}</label></td>
+           	</tr>
+			</if>
+            </tbody>       
+      </table>
+    </form>
+<else/>
+<script type="text/javascript">
+alert("没有修改！");
+window.close();
+</script>
+</if>
+</body>
+<script type="text/javascript">
+function passConfirm(id){
+	if(confirm("确定通过审核?")){
+		$.ajax({
+	        url: "{$url}/passConfirm/stu_id/" + id,
+			type: 'GET',
+			success: 
+			    function(result){
+		            if (result == '1') {	
+			            alert("操作成功！");
+						window.parent.location.reload();
+						window.close();
+		            } else if (result == '-1') {
+			            alert("没有权限！");
+				    } else {
+			            alert("操作失败！");
+					}
+	            }
+	   });
+	}
+}
+function nopassConfirm(id){
+	if(confirm("确定不允许此次修改?")){
+		$.ajax({
+	        url: "{$url}/nopassConfirm/stu_id/" + id,
+			type: 'GET',
+			success: 
+			    function(result){
+		            if (result == '1') {	
+			            alert("操作成功！");
+						window.parent.location.reload();
+						window.close();
+		            } else if (result == '-1') {
+			            alert("没有权限！");
+				    } else {
+			            alert("操作失败！");
+					}
+	            }
+	   });
+   	}
+}
+function deleteEdit(){
+	if(confirm("确定放弃修改申请?")){
+		$.ajax({
+	        url: "{$url}/deleteEdit",
+			type: 'GET',
+			success: 
+			    function(result){
+		            if (result == '1') {	
+			            alert("操作成功！");
+						window.parent.location.reload();
+						window.close();
+		            } else if (result == '-1') {
+			            alert("没有权限！");
+				    } else {
+			            alert("操作失败！");
+					}
+	            }
+	   });
+   	}
+}
+</script>
+</html>           		
